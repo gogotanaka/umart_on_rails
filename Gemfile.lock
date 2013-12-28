@@ -91,6 +91,7 @@ GEM
     jquery-turbolinks (2.0.1)
       railties (>= 3.1.0)
       turbolinks
+    json (1.8.1)
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -204,6 +205,9 @@ GEM
     turbolinks (2.1.0)
       coffee-rails
     tzinfo (0.3.38)
+    uglifier (2.3.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     unicode-display_width (0.1.1)
     unicorn (4.7.0)
       kgio (~> 2.6)
@@ -245,4 +249,5 @@ DEPENDENCIES
   sqlite3
   therubyracer
   turbolinks
+  uglifier
   unicorn
