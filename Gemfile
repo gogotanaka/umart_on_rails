@@ -106,7 +106,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'pg', '0.12.2'
+  gem 'pg', '0.15.1'
   # ログ保存先変更、静的アセット Heroku 向けに調整
   gem 'rails_12factor'
 end
