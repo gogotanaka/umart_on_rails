@@ -22,7 +22,7 @@ test:
 
 production:
   host: localhost
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: pg
+  database: db/production.pg
   pool: 5
   timeout: 5000

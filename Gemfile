@@ -7,9 +7,6 @@ source 'https://rails-assets.org'
 ruby '2.0.0'
 
 # Bower Manager => https://rails-assets.org/
-group :production do
-  gem 'pg', '0.12.2'
-end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -68,6 +65,7 @@ gem 'kaminari'
 group :development do
   # erbからhamlに変換
   gem 'erb2haml'
+  gem 'sqlite3'
 end
 
 group :development, :test do
@@ -106,7 +104,7 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'sqlite3'
+  gem 'pg', '0.12.2'
   # ログ保存先変更、静的アセット Heroku 向けに調整
   gem 'rails_12factor'
 end
