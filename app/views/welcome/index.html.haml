@@ -1,2 +1,36 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+#main_container
+  %h1 Umart On Rails
+  %h3= "ただいまの注文は#{Date.today}扱いになります。"
+  = form_tag do
+    %table
+      %tr.height50px
+        %td 名前:　
+        %td= select_tag "page[name]", options_from_collection_for_select(User.all, :id, :name), class: "form-control input-sm width100px float-left"
+      %tr.height50px
+        %td
+        %td
+          %div= render partial: 'welcome/menu'
+          #menu_item_form
+          %h2=link_to sanitize('<i class="fa fa-plus-circle"></i>') + " 第#{2}希望を入力する。", welcome_multiply_menu_ajax_path, remote: true, method: :put
+          %h2=link_to "aa", users_path, {method: :put}
+          %div
+            %span 
+              = check_box_tag 'options[]', "豚汁", false, {}
+              豚汁
+              = check_box_tag 'options[]', "豚汁", false, {}
+              みそ汁
+              = check_box_tag 'options[]', "豚汁", false, {}
+              おかかごはん
+              = check_box_tag 'options[]', "豚汁", false, {}
+              めんたいごはん
+    =link_to "リコメンドエンジン", ""
+    %br
+
+
+
+
+
+            
+            
+
+    = button_tag "submit", class: "btn btn-default top20px"

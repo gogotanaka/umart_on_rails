@@ -1,4 +1,13 @@
 Rails4app::Application.routes.draw do
+  get "order/confirm"
+  get "order/execute"
+  get "order/index"
+  get "order/recommend"
+  post "welcome/multiply_menu_ajax"
+  resources :menus
+
+  resources :users
+
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
