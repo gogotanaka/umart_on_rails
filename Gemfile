@@ -67,7 +67,7 @@ gem 'kaminari'
 group :development do
   # erbからhamlに変換
   gem 'erb2haml'
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.5'
 end
 
 group :development, :test do
