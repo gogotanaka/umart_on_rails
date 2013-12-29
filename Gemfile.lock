@@ -113,7 +113,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.2)
-    pg (0.15.1)
+    pg (0.17.1)
     polyglot (0.3.3)
     pry (0.9.12.4)
       coderay (~> 1.0)
@@ -188,7 +188,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.5)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
     therubyracer (0.12.0)
@@ -234,7 +233,7 @@ DEPENDENCIES
   kaminari
   less-rails
   migrant
-  pg (= 0.15.1)
+  pg
   pry-byebug
   pry-coolline
   pry-doc
@@ -246,7 +245,6 @@ DEPENDENCIES
   rspec-rails
   simple_form
   spring
-  sqlite3 (= 1.3.5)
   therubyracer
   turbolinks
   uglifier

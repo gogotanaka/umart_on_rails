@@ -61,13 +61,14 @@ gem 'migrant'
 # Pagenation
 gem 'kaminari'
 
+
+gem 'pg'
 # NewRelic
 #gem 'newrelic_rpm'
 
 group :development do
   # erbからhamlに変換
   gem 'erb2haml'
-  gem 'sqlite3', '1.3.5'
 end
 
 group :development, :test do
@@ -106,7 +107,6 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'pg', '0.15.1'
   # ログ保存先変更、静的アセット Heroku 向けに調整
   gem 'rails_12factor'
 end

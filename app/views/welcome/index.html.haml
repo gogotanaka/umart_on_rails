@@ -1,7 +1,7 @@
 #main_container
   %h1 Umart On Rails
   %h3= "ただいまの注文は#{Date.today}扱いになります。"
-  = form_tag do
+  = form_tag order_confirm_path do
     %table
       %tr.height50px
         %td 名前:　

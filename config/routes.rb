@@ -1,5 +1,5 @@
 Rails4app::Application.routes.draw do
-  get "order/confirm"
+  post "order/confirm"
   get "order/execute"
   get "order/index"
   get "order/recommend"
