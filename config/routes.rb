@@ -3,7 +3,7 @@ Rails4app::Application.routes.draw do
   get "order/execute"
   get "order/index"
   get "order/recommend"
-  post "welcome/multiply_menu_ajax"
+  get "welcome/multiply_menu_ajax"
   resources :menus
 
   resources :users

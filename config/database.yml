@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: development
+  database: umart_on_rails_development
   host: localhost
   username: umart_on_rails
   pool: 5

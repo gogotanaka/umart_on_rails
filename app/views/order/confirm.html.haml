@@ -1,3 +1,5 @@
 #main_container
-  %h1 Order#confirm
-  %p Find me in app/views/order/confirm.html.haml
+  %h1 Umart On Rails
+  - @user.orders.each do |order|
+    - if order.menu
+      %p= "#{order.menu.name}の#{order.amount_jp}#{}"  

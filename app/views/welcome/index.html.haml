@@ -1,36 +1,28 @@
 #main_container
-  %h1 Umart On Rails
+  <h1> <span style="color: red;">U</span>mart <span style="color: blue;">O</span>n <span style="color: green;">R</span>ails</h1>
   %h3= "ただいまの注文は#{Date.today}扱いになります。"
   = form_tag order_confirm_path do
     %table
       %tr.height50px
         %td 名前:　
-        %td= select_tag "page[name]", options_from_collection_for_select(User.all, :id, :name), class: "form-control input-sm width100px float-left"
+        %td= select_tag "user_id", options_from_collection_for_select(User.all, :id, :name), class: "form-control input-sm width100px float-left"
       %tr.height50px
         %td
         %td
-          %div= render partial: 'welcome/menu'
+          %div= render partial: 'welcome/menu', locals: {index: 1}
           #menu_item_form
-          %h2=link_to sanitize('<i class="fa fa-plus-circle"></i>') + " 第#{2}希望を入力する。", welcome_multiply_menu_ajax_path, remote: true, method: :put
-          %h2=link_to "aa", users_path, {method: :put}
+          #menu_item_button
+            = render partial: 'welcome/add_menu_button', locals: {index: 1}
+      %tr.height50px
+        %td 汁物:　
+        %td
           %div
             %span 
-              = check_box_tag 'options[]', "豚汁", false, {}
+              = check_box_tag 'options[]', 1, false
               豚汁
-              = check_box_tag 'options[]', "豚汁", false, {}
+              = check_box_tag 'options[]', 2, false
               みそ汁
-              = check_box_tag 'options[]', "豚汁", false, {}
-              おかかごはん
-              = check_box_tag 'options[]', "豚汁", false, {}
-              めんたいごはん
-    =link_to "リコメンドエンジン", ""
-    %br
-
-
-
-
-
-            
-            
-
+    
     = button_tag "submit", class: "btn btn-default top20px"
+
+    %h1.top30px.text-center=link_to sanitize('<i class="fa fa-cloud"></i>') + "リコメンドエンジン" + sanitize('<i class="fa fa-cloud"></i>'), ""

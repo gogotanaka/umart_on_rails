@@ -1,7 +1,22 @@
+%h4
+  = "第#{index}希望"
 %table
   %tr.height50px
     %td メニュー:　
-    %td= select_tag "page[name]", options_from_collection_for_select(Menu.all, :id, :name), class: "form-control input-sm width400px"
+    %td= select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.all, :id, :name), class: "form-control input-sm width400px"
   %tr.height50px
     %td ご飯の量:　
-    %td= select_tag "page[name]", options_for_select(@amount), class: "form-control input-sm width100px"
+    %td
+      - @amount_hash.each do |k, v|
+        - if k == "普通"
+          = radio_button_tag "menus[menu#{index}][amount_id]", v.to_i, {:checked => true} 
+        - else
+          = radio_button_tag "menus[menu#{index}][amount_id]", v.to_i
+        = " #{k}　"
+  %tr.height50px
+    %td ご飯のオプション:　
+    %td
+      = check_box_tag "menus[menu#{index}][rice_options][]", 3, false
+      おかかごはん      
+      = check_box_tag "menus[menu#{index}][rice_options][]", 4, false
+      めんたいごはん
