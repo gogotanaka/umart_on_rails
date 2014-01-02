@@ -1,5 +1,5 @@
 class OrderController < ApplicationController
-  def confirm
+  def execute
   	@user = User.find(params[:user_id])
   	params[:menus].each_value.with_index do |menu_hash,i|
 	  	order = @user.orders.create!(
@@ -12,7 +12,8 @@ class OrderController < ApplicationController
 	  end
   end
 
-  def execut!
+  def confirm
+    @users = User.all
   end
 
   def index
@@ -20,4 +21,5 @@ class OrderController < ApplicationController
 
   def recommend
   end
+
 end

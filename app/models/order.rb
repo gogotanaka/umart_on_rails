@@ -7,9 +7,20 @@ class Order < ActiveRecord::Base
 		{"特盛" => 4, "大盛り" => 3, "普通" => 2, "少なめ" => 1, "ご飯1/3" => 0}.invert[amount]
 	end
 
-	def option_jp
-		# {"おかかごはん" => 3, "めんたいごはん" => 4}.invert[amount]
-	end
+  def self.today
+    where(created_at:  Time.now.beginning_of_day ..Time.now).order(priority: :asc)
+  end
+
+  def jp
+    "#{menu.name}の#{amount_jp}、#{options.map{|option| option.option_jp}}"
+  end
+
+  def self.today_soup
+  	today.
+  	  map{|order|order.options}.flatten.
+  	  map{|option| option.option_jp}.
+  	  select{|option| ["豚汁", "みそ汁"].include?(option)}
+  end
 
 	def option_creater(ary)
   	if ary.present?

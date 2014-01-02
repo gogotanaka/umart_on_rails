@@ -1,2 +1,5 @@
-%h1 Order#execute
-%p Find me in app/views/order/execute.html.haml
+#main_container
+  %h1 Umart On Rails
+  - @user.today_orders.each do |order|
+    - if order.menu
+      %p= "#{order.menu.name}の#{order.amount_jp}#{}"  

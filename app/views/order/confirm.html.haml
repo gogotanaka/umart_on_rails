@@ -1,5 +1,24 @@
 #main_container
   %h1 Umart On Rails
-  - @user.orders.each do |order|
-    - if order.menu
-      %p= "#{order.menu.name}の#{order.amount_jp}#{}"  
+  %table
+  %th
+    %td
+      %h1 一覧
+  - @users.each do |user|
+    %tr
+    - user.today_orders.each do |order|
+      - if order.menu
+        %td
+          %p= "#{user.name}さん、#{order.jp}(第#{order.priority + 1}希望)"  
+
+  %table
+  %th
+    %td
+      %h1 集計
+  - Order.today.order(menu_id: :asc).each do |order|
+    %tr
+      %td
+        %p= "#{order.jp}"
+  %tr
+    %td
+      = Order.today_soup

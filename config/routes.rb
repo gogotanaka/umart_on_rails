@@ -1,6 +1,6 @@
 Rails4app::Application.routes.draw do
-  post "order/confirm"
-  get "order/execute"
+  get "order/confirm"
+  post "order/execute"
   get "order/index"
   get "order/recommend"
   get "welcome/multiply_menu_ajax"

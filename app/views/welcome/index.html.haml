@@ -1,7 +1,7 @@
 #main_container
   <h1> <span style="color: red;">U</span>mart <span style="color: blue;">O</span>n <span style="color: green;">R</span>ails</h1>
   %h3= "ただいまの注文は#{Date.today}扱いになります。"
-  = form_tag order_confirm_path do
+  = form_tag order_execute_path do
     %table
       %tr.height50px
         %td 名前:　
@@ -25,4 +25,4 @@
     
     = button_tag "submit", class: "btn btn-default top20px"
 
-    %h1.top30px.text-center=link_to sanitize('<i class="fa fa-cloud"></i>') + "リコメンドエンジン" + sanitize('<i class="fa fa-cloud"></i>'), ""
+    %h1.top30px.text-center=link_to sanitize('<i class="fa fa-cloud"></i>') + "リコメンドエンジン" + sanitize('<i class="fa fa-cloud"></i>'), order_recommend_path
