@@ -9,13 +9,13 @@
     - user.today_orders.each do |order|
       - if order.menu
         %td
-          %p= "#{user.name}さん、#{order.jp}(第#{order.priority + 1}希望)"  
+          %p= "#{user.name}さん　#{order.jp}　(第#{order.priority + 1}希望)"  
 
   %table
   %th
     %td
       %h1 集計
-  - Order.today.order(menu_id: :asc).each do |order|
+  - Order.today.where(priority: 0).order(menu_id: :asc).each do |order|
     %tr
       %td
         %p= "#{order.jp}"
