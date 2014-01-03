@@ -1,19 +1,20 @@
 Rails4app::Application.routes.draw do
-  get "order/confirm"
-  post "order/execute"
-  get "order/index"
-  get "order/recommend"
-  get "welcome/multiply_menu_ajax"
   resources :menus
-
   resources :users
+  resources :orders do
+    collection do
+      get :recommend
+    end
+  end
 
   get "welcome/index"
+  get "welcome/multiply_menu_ajax"
+
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

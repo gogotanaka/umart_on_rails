@@ -17,6 +17,7 @@ class Order < ActiveRecord::Base
 
   def self.today_soup
   	today.
+  	  where(priority: 0).
   	  map{|order|order.options}.flatten.
   	  map{|option| option.option_jp}.
   	  select{|option| ["豚汁", "みそ汁"].include?(option)}

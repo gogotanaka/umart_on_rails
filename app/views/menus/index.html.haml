@@ -1,19 +1,20 @@
-%h1 Listing menus
+#main_container
+  %h1 Listing menus
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - @menus.each do |menu|
+  %table
     %tr
-      %td= menu.name
-      %td= link_to 'Show', menu
-      %td= link_to 'Edit', edit_menu_path(menu)
-      %td= link_to 'Destroy', menu, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Name
+      %th
+      %th
+      %th
 
-%br
+    - @menus.each do |menu|
+      %tr
+        %td= menu.name
+        %td= link_to 'Show', menu
+        %td= link_to 'Edit', edit_menu_path(menu)
+        %td= link_to 'Destroy', menu, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Menu', new_menu_path
+  %br
+
+  = link_to 'New Menu', new_menu_path
