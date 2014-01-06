@@ -6,6 +6,10 @@ class OrdersController < ApplicationController
   # GET /orders
   def index
     @users = User.all
+    begin
+      @no_eat_users = User.all.pluck(:name) - Order.today.map{|order| order.user.name}
+    rescue
+    end
   end
 
   # GET /orders/1

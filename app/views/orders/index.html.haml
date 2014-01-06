@@ -17,6 +17,8 @@
             %td= "　#{order.jp}　"
             %td= "　(第#{order.priority + 1}希望)"
             %td= link_to '　Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %h2 今日食べない人
+  %h3=@no_eat_users
 
   %h2 集計
   %table
