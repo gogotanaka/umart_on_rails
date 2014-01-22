@@ -3,7 +3,7 @@ paintIt = (element, backgroundColor, textColor) ->
   if textColor?
     element.style.color = textColor
 $ ($)->
-  $('.random-button').click (e)->
+  $('.random-button').attr("disabled",null).click (e)->
     e.preventDefault()
     select = $(e.target).parent().find('select')
     options = select.find('option')
