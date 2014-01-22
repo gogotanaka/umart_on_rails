@@ -5,7 +5,8 @@
     %td メニュー:　
     %td
       = select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.all, :id, :name), class: "form-control input-sm width400px"
-      %button.random-button ( ´•౪•`)&lt;ﾗﾝﾀﾞﾑ!
+      %button.random-button{:disabled=>:disabled}
+        ( ´•౪•`)&lt;ﾗﾝﾀﾞﾑ!
   %tr.height50px
     %td ご飯の量:　
     %td
