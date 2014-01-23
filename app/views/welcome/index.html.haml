@@ -5,7 +5,7 @@
     %table
       %tr.height50px
         %td 名前:　
-        %td= f.select :user_id, options_from_collection_for_select(User.order(name: :asc), :id, :name),{}, class: "form-control input-sm width100px float-left"
+        %td= f.select :user_id, options_from_collection_for_select(User.order(name: :asc), :id, :name, selected: @user_id),{}, class: "form-control input-sm width100px float-left"
       %tr.height50px
         %td
         %td

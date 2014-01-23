@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
   # POST /orders
   def create(order)
     @user = User.find(params[:order][:user_id])
+    cookies.permanent[:user_id] = @user.id
     params[:menus].each_value.with_index do |menu_hash,i|
       order = @user.orders.create!(
         menu_id:  menu_hash[:menu_id],
