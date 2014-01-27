@@ -1,4 +1,4 @@
 $("#menu_item_form").append(
-  "<%= j(render(partial: 'welcome/menu', locals: {index: @index})) %>");
+  "<%= j(render(partial: 'welcome/menu', locals: {index: @index, random_disabled: false})) %>");
 $("#menu_item_button").html(
   "<%= j(render(partial: 'welcome/add_menu_button', locals: {index: @index})) %>");
