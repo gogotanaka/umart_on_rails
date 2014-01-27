@@ -9,7 +9,7 @@
       %tr.height50px
         %td
         %td
-          %div= render partial: 'welcome/menu', locals: {index: 1}
+          %div= render partial: 'welcome/menu', locals: {index: 1, random_disabled: true}
           #menu_item_form
           #menu_item_button
             = render partial: 'welcome/add_menu_button', locals: {index: 1}
