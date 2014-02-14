@@ -21,14 +21,18 @@
   %h3=@no_eat_users
 
   %h2 集計
-  %table
-    %tr
-      %th
+  %ul
     - Order.today.where(priority: 0).order(menu_id: :asc).each do |order|
-      %tr
-        %td
-          %p= "#{order.jp}"
+      %li
+        %p= "#{order.jp}"
+  - s = Order.today_soup
+  - k = s.uniq
+  %table.soup
     %tr
-      %td= Order.today_soup
+      - k.each do |t|
+        %td= t
+    %tr
+      - k.each do |t|
+        %td= s.count(t)
 
   %h3 03-3456-4074
