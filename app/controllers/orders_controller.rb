@@ -37,8 +37,10 @@ class OrdersController < ApplicationController
         amount:   menu_hash[:amount_id],
         priority: i
       )
-      order.option_creater(menu_hash[:rice_options])
-      order.option_creater(params[:options])
+      order.option_creater((menu_hash[:rice_options]||[]).map(&:to_i), :rice_option)
+      order.option_creater(menu_hash[:remark], :remark)
+      order.option_creater((params[:soup_options]||[]).map(&:to_i), :soup)
+
     end
 
     redirect_to orders_path

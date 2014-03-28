@@ -1,10 +1,10 @@
 source "https://rubygems.org"
- 
+
 gem "rails", "4.0.2"
 
 source 'https://rails-assets.org'
 
-ruby '2.0.0'
+ruby '2.1.0'
 
 # Bower Manager => https://rails-assets.org/
 

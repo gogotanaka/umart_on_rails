@@ -14,7 +14,7 @@
         - if order.menu
           %tr
             %td= "#{user.name}さん"
-            %td= "　#{order.jp}　"
+            %td= "　#{order.to_jp}　"
             %td= "　(第#{order.priority + 1}希望)"
             %td= link_to '　Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
   %h2 今日食べない人
@@ -24,15 +24,13 @@
   %ul
     - Order.today.where(priority: 0).order(menu_id: :asc).each do |order|
       %li
-        %p= "#{order.jp}"
-  - s = Order.today_soup
-  - k = s.uniq
+        %p= "#{order.to_jp_without_soup}"
   %table.soup
     %tr
-      - k.each do |t|
-        %td= t
+      %td=Order.today_soup.count(0)
+      %td=Order.today_soup.count(1)
     %tr
-      - k.each do |t|
-        %td= s.count(t)
+      %td 豚汁
+      %td みそ汁
 
   %h3 03-3456-4074

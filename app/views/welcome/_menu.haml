@@ -4,10 +4,10 @@
   %tr.height50px
     %td メニュー:　
     %td
-      = select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.all.sort_by{|m| m.name.delete('[]［］')}, :id, :name), class: "form-control input-sm width400px"
-      %button.random-button{:disabled=>random_disabled ? :disabled : nil}
+      = select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.all, :id, :name), class: "form-control input-sm width400px"
+      %button.random-button.top10px{:disabled=>random_disabled ? :disabled : nil}
         ( ´•౪•`)&lt;ﾗﾝﾀﾞﾑ!
-      %input.search{:type => :text, :placeholder => "検索..."}
+      %input.search.top10px{:type => :text, :placeholder => "検索..."}
       .result
 
   %tr.height50px
@@ -22,7 +22,13 @@
   %tr.height50px
     %td ご飯のオプション:　
     %td
-      = check_box_tag "menus[menu#{index}][rice_options][]", 3, false
+      = check_box_tag "menus[menu#{index}][rice_options][]", 0, false
       おかかごはん
-      = check_box_tag "menus[menu#{index}][rice_options][]", 4, false
+      = check_box_tag "menus[menu#{index}][rice_options][]", 1, false
       めんたいごはん
+  %tr.height50px
+    %td
+      任意オプション:　
+      %br
+      (ex.薄味,合鴨トッピング　
+    %td= text_field_tag "menus[menu#{index}][remark][]", "", size: 75

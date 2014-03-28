@@ -17,12 +17,12 @@
         %td 汁物:　
         %td
           %div
-            %span 
-              = check_box_tag 'options[]', 1, false
+            %span
+              = check_box_tag 'soup_options[]', 0, false
               豚汁
-              = check_box_tag 'options[]', 2, false
+              = check_box_tag 'soup_options[]', 1, false
               みそ汁
-    
+
     = button_tag "submit", class: "btn btn-default top20px"
 
     %h1.top30px.text-center=link_to sanitize('<i class="fa fa-cloud"></i>') + "リコメンドエンジン" + sanitize('<i class="fa fa-cloud"></i>'), recommend_orders_path
