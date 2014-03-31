@@ -1,5 +1,5 @@
 OPTION_CODES = [:rice_option, :soup, :remark]
-RICE_AMOUNTS = ["特盛", "大盛り", "普通", "少なめ", "ご飯1/3"]
+RICE_AMOUNTS = ["ご飯1/3", "少なめ", "普通", "大盛り", "特盛"]
 
 OPTION_HASH = {
   rice_option: {
