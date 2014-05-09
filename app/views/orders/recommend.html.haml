@@ -1,5 +1,3 @@
 #main_container
-  %h1 Coming Soon ……
-  %h3 個人的には合鴨がおすすめです。
-  - Menu.all.map{|m|[m.name, m.orders.count]}.sort_by{|a,b| a[1] <=> b[1]}.each do |(name, count)|
-    %div= "#{name}(#{count})"
+  - Menu.all.map{|m|[m.name, m.orders.count]}.sort_by{|(n, c)| c}.reverse.each.with_index do |(name, count), i|
+    %div= "#{name}(#{count})#{'←これがおすすめ' if i == 0}"
