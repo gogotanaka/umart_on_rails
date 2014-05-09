@@ -124,21 +124,3 @@
 
 .width100per{width:100%;}
 .width80per{width:80%;}
-
-// カンタンボーダー
-
-.border-solid{
-  border-top:1px solid $gray4;
-  width:100%;
-  height:0;
-}
-.border-dotted{
-  border-top:1px dotted $gray4;
-  width:100%;
-  height:0;
-}
-.border-dashed{
-  border-top:1px dashed $gray4;
-  width:100%;
-  height:0;
-}

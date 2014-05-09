@@ -22,11 +22,10 @@ gem 'jquery-turbolinks'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
-# CSS Support
-gem 'less-rails'
-
 # Use unicorn as the app server
 gem 'unicorn'
+
+gem 'bootstrap-sass'
 
 # Presenter Layer
 #gem 'draper'

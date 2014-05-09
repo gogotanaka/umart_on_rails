@@ -1,0 +1,13 @@
+$primary: #d9230f;
+$secondary: #d9230f;
+
+@import "bootstrap";
+
+a {
+  color: $primary;
+  unicode-bidi: none;
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}

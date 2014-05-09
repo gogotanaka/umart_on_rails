@@ -5,9 +5,9 @@
     %td メニュー:　
     %td
       = select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.all, :id, :name), class: "form-control input-sm width400px"
-      %button.random-button.top10px{:disabled=>random_disabled ? :disabled : nil}
+      %button.random-button.top10px.btn{:disabled=>random_disabled ? :disabled : nil}
         ( ´•౪•`)&lt;ﾗﾝﾀﾞﾑ!
-      %input.search.top10px{:type => :text, :placeholder => "検索..."}
+      %input.search.top10px.form-control{type: :text, placeholder: "検索..."}
       .result
 
   %tr.height50px
@@ -31,4 +31,4 @@
       任意オプション:　
       %br
       (ex.薄味,合鴨トッピング　
-    %td= text_field_tag "menus[menu#{index}][remark][]", "", size: 75
+    %td= text_field_tag "menus[menu#{index}][remark][]", "", size: 75, class: 'form-control'

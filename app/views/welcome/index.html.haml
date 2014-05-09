@@ -1,5 +1,11 @@
 #main_container
-  <h1> <span style="color: red;">U</span>mart <span style="color: blue;">O</span>n <span style="color: green;">R</span>ails</h1>
+  %h1
+    = succeed "mart" do
+      %span{style: "color: red;"}> U
+    = succeed "n" do
+      %span{style: "color: blue;"} O
+    = succeed "ails" do
+      %span{style: "color: green;"} R
   %h3= "ただいまの注文は#{Date.today}扱いになります。"
   = form_for(Order.new) do |f|
     %table
@@ -23,9 +29,12 @@
               = check_box_tag 'soup_options[]', 1, false
               みそ汁
 
-    = button_tag "submit", class: "btn btn-default top20px"
+    = button_tag "submit", class: "btn top20px"
 
     %h1.top30px.text-center=link_to sanitize('<i class="fa fa-cloud"></i>') + "リコメンドエンジン" + sanitize('<i class="fa fa-cloud"></i>'), recommend_orders_path
-    %h4.top50px=link_to "注文管理", orders_path
-    %h4.top50px=link_to "ユーザー管理", users_path
-    %h4.top50px=link_to "メニュー管理", menus_path
+    %h4.top50px
+      %i.fa.fa-cog=link_to "注文管理", orders_path, class: 'left10px'
+    %h4.top50px
+      %i.fa.fa-user=link_to "ユーザー管理", users_path, class: 'left10px'
+    %h4.top50px
+      %i.fa.fa-apple=link_to "メニュー管理", menus_path, class: 'left10px'

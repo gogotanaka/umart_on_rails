@@ -3,14 +3,6 @@
 // You can use Less here: http://lesscss.org/
 
 #main_container {
-	width: 900px;
-	margin: auto;
-}
-
-
-a {
-	unicode-bidi: none;
-  &:hover {
-    text-decoration: none;
-  }
+  width: 900px;
+  margin: auto;
 }
