@@ -1,3 +1,5 @@
 #main_container
   %h1 Coming Soon ……
   %h3 個人的には合鴨がおすすめです。
+  - Menu.all.map{|m|[m.name, m.orders.count]}.sort_by{|a,b| a[1] <=> b[1]}.each do |(name, count)|
+    %div= "#{name}(#{count})"
