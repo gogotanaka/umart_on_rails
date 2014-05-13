@@ -5,7 +5,7 @@ class MenusController < ApplicationController
 
   # GET /menus
   def index
-    @menus = Menu.all
+    @menus = Menu.for_display
   end
 
   # GET /menus/1
@@ -48,7 +48,8 @@ class MenusController < ApplicationController
   # DELETE /menus/1
   def destroy(id)
     @menu = Menu.find(id)
-    @menu.destroy
+    @menu.display = false
+    @menu.save
 
     redirect_to menus_url
   end

@@ -4,7 +4,7 @@
   %tr.height50px
     %td メニュー:　
     %td
-      = select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.all, :id, :name), class: "form-control input-sm width400px"
+      = select_tag "menus[menu#{index}][menu_id]", options_from_collection_for_select(Menu.for_display, :id, :name), class: "form-control input-sm width400px"
       %button.random-button.top10px.btn{:disabled=>random_disabled ? :disabled : nil}
         ( ´•౪•`)&lt;ﾗﾝﾀﾞﾑ!
       %input.search.top10px.form-control{type: :text, placeholder: "検索..."}
