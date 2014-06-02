@@ -43,7 +43,7 @@ class Order < ActiveRecord::Base
 
 
   def to_jp_without_soup
-    string = "#{menu.name}の#{jp_rice_amount}"
+    string = "#{menu.try(:name) || " *** nil *** "}の#{jp_rice_amount}"
 
     if jp_options_by_option_sym(:rice_option).present?
        string += jp_options_by_option_sym(:rice_option)

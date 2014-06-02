@@ -15,8 +15,16 @@
           %tr
             %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => "#{user.name}さんの#{order.to_jp} (第#{order.priority + 1}希望) を本当に削除しますか？\nあなたは本当に #{user.name} さんですか" }
             %td= "#{user.name}さん"
-            %td= "#{order.to_jp}"
-            %td= "(第#{order.priority + 1}希望)"
+
+            %td= "　#{order.to_jp}　"
+            %td= "　(第#{order.priority + 1}希望)"
+        - else
+          %tr
+            %td= "#{user.name}さん"
+            %td *** nil ***
+            %td
+            %td
+
   %h2 今日食べない人
   %h3=@no_eat_users
 
