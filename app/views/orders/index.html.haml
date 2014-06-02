@@ -2,21 +2,22 @@
   %h1 Listing orders
 
   %h2 一覧
-  %table
+  %table.table.table-striped
     %tr
-      %th
-      %th
-      %th
-      %th
+      %th 削除
+      %th 名前
+      %th メニュー
+      %th 希望度
 
     - @users.each do |user|
       - user.today_orders.each do |order|
         - if order.menu
           %tr
+            %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => "#{user.name}さんの#{order.to_jp} (第#{order.priority + 1}希望) を本当に削除しますか？\nあなたは本当に #{user.name} さんですか" }
             %td= "#{user.name}さん"
+
             %td= "　#{order.to_jp}　"
             %td= "　(第#{order.priority + 1}希望)"
-            %td= link_to '　Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
         - else
           %tr
             %td= "#{user.name}さん"
